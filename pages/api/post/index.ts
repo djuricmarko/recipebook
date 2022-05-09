@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import prisma from '../../../lib/prisma';
 import { getSession } from 'next-auth/react';
+
+import prisma from '../../../lib/prisma';
 
 // POST /api/post
 // Required fields in body: title
@@ -12,8 +13,8 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
 	if (session) {
 		const result = await prisma.post.create({
 			data: {
-				title: title,
-				content: content,
+				title,
+				content,
 				author: { connect: { email: session?.user?.email } },
 			},
 		});

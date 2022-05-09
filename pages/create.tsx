@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import Layout from '../components/Layout';
 import Router from 'next/router';
+import React, { useState } from 'react';
+
+import Layout from '../components/Layout';
 
 const Draft: React.FC = () => {
 	const [title, setTitle] = useState('');

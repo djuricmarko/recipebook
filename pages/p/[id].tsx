@@ -1,11 +1,12 @@
-import React from 'react';
-import { GetServerSideProps } from 'next';
-import ReactMarkdown from 'react-markdown';
-import Layout from '../../components/Layout';
+import type { GetServerSideProps } from 'next';
 import Router from 'next/router';
-import { PostProps } from '../../components/Post';
-import prisma from '../../lib/prisma';
 import { useSession } from 'next-auth/react';
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+
+import Layout from '../../components/Layout';
+import type { PostProps } from '../../components/Post';
+import prisma from '../../lib/prisma';
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	const post = await prisma.post.findUnique({
@@ -44,7 +45,7 @@ const Post: React.FC<PostProps> = (props) => {
 	}
 	const userHasValidSession = Boolean(session);
 	const postBelongsToUser = session?.user?.email === props.author?.email;
-	let title = props.title;
+	let { title } = props;
 	if (!props.published) {
 		title = `${title} (Draft)`;
 	}
