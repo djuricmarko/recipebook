@@ -1,18 +1,27 @@
+import Link from 'next/link';
 import type { FC } from 'react';
+import { useState } from 'react';
 
 const Login: FC = () => {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	// eslint-disable-next-line no-console
+	console.log(email, password);
+
 	return (
 		<div className="flex h-screen items-center justify-center bg-[#E5F4EC]">
 			<div className="flex h-max flex-row">
 				<div className="hidden lg:block">
-					<img src="/static/images/login-image.jpg" alt="Login food image" className="h-[616px]" />
+					<img src="/static/images/login-image.jpg" alt="Login food image" className="h-[628px]" />
 				</div>
 				<div className="bg-[#FAFAFA]">
-					<div className="flex h-full flex-col items-start justify-start p-14 lg:w-[500px]">
+					<div className="m-2 flex h-full flex-col items-start justify-start p-14 lg:w-[500px]">
 						<h1 className="text-2xl font-bold">Login in to your account</h1>
 						<div className="p-6" />
 						<label htmlFor="email">Email</label>
 						<input
+							onChange={(e) => setEmail(e.target.value)}
 							type="text"
 							name="email"
 							className="w-full rounded border-2 p-3 focus:border-gray-500 focus:outline-none focus:ring-gray-500"
@@ -21,19 +30,23 @@ const Login: FC = () => {
 						<div className="p-4" />
 						<label htmlFor="password">Password</label>
 						<input
-							type="text"
+							onChange={(e) => setPassword(e.target.value)}
+							type="password"
 							name="password"
 							className="w-full rounded border-2 p-3 focus:border-gray-500 focus:outline-none focus:ring-gray-500"
 							placeholder="Enter your password"
 						/>
-						<div className="p-5" />
+						<Link href="/login">
+							<a className="mt-3 hover:underline">Forgot password?</a>
+						</Link>
+						<div className="p-4" />
 						<button
 							type="button"
 							className="w-full rounded bg-red-400 p-3 text-white transition-colors duration-300 hover:bg-red-500"
 						>
 							Login
 						</button>
-						<div className="relative my-5 flex w-full items-center py-5">
+						<div className="relative my-4 flex w-full items-center py-4">
 							<div className="grow border-t border-gray-300"></div>
 							<span className="mx-4 shrink text-gray-400">OR</span>
 							<div className="grow border-t border-gray-300"></div>
