@@ -1,19 +1,14 @@
-import Image from 'next/image';
 import type { FC } from 'react';
 
 const Login: FC = () => {
 	return (
 		<div className="flex h-screen items-center justify-center bg-[#E5F4EC]">
-			<div className="flex h-max flex-row md:w-[900px]">
-				<Image
-					src="/static/images/login-image.jpg"
-					alt="Login food image"
-					width="640"
-					height="959"
-					className="hidden md:block"
-				/>
-				<div className="bg-[#FAFAFA] md:w-[800px]">
-					<div className="flex h-full flex-col items-start justify-start p-14">
+			<div className="flex h-max flex-row">
+				<div className="hidden lg:block">
+					<img src="/static/images/login-image.jpg" alt="Login food image" className="h-[616px]" />
+				</div>
+				<div className="bg-[#FAFAFA]">
+					<div className="flex h-full flex-col items-start justify-start p-14 lg:w-[500px]">
 						<h1 className="text-2xl font-bold">Login in to your account</h1>
 						<div className="p-6" />
 						<label htmlFor="email">Email</label>
