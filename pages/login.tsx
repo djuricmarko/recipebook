@@ -1,10 +1,18 @@
 import Link from 'next/link';
-import type { FC } from 'react';
-import { useState } from 'react';
+import { signIn } from 'next-auth/react';
+import React, { useState } from 'react';
 
-const Login: FC = () => {
+const Login: React.FunctionComponent = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+
+	const googleSignIn = async () => {
+		try {
+			await signIn('google', { callbackUrl: '/' });
+		} catch (error) {
+			console.warn('Google Auth Error', error.message);
+		}
+	};
 
 	// eslint-disable-next-line no-console
 	console.log(email, password);
@@ -52,6 +60,7 @@ const Login: FC = () => {
 							<div className="grow border-t border-gray-300"></div>
 						</div>
 						<button
+							onClick={googleSignIn}
 							type="button"
 							className="inline-flex w-full items-center justify-center rounded bg-[#4285F4] p-3 text-white transition-colors duration-300 hover:bg-blue-600 focus:outline-none"
 						>
