@@ -4,3 +4,21 @@
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  SECRET=864891de5cbcc5ba0dc546528398099ff295ed3e
+
+  NEXTAUTH_URL='https://recipebooktest.netlify.app'
+  # Google oAuth
+  GOOGLE_CLIENT_ID=601886753331-4kcu1tf241kbd201vjtomiokkb3rbmet.apps.googleusercontent.com
+  GOOGLE_CLIENT_SECRET=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
+
+  # Email (magic link)
+  SMTP_HOST=YOUR_SMTP_HOST
+  SMTP_PORT=YOUR_SMTP_PORT
+  SMTP_USER=YOUR_SMTP_USERNAME
+  SMTP_PASSWORD=YOUR_SMTP_PASSWORD
+  SMTP_FROM=YOUR_REPLY_TO_EMAIL_ADDRESS
+
+  # Database
+  DATABASE_URL='mysql://gpi01is8271z:pscale_pw_B5i1ynssR9XU91Bv2ibalgimVAffWkBMHmLPJJ8IaW4@ayucsyu3ooe7.eu-central-1.psdb.cloud/recipebook?sslaccept=strict'
