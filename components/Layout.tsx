@@ -1,50 +1,40 @@
-import React, { ReactNode } from "react";
-import Header from "./Header";
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import type { ReactChild } from 'react';
+import React from 'react';
 
-type Props = {
-  children: ReactNode;
+import Navbar from './Navbar';
+
+type AppProps = {
+	children: ReactChild;
 };
 
-const Layout: React.FC<Props> = (props) => (
-  <div>
-    <Header />
-    <div className="layout">{props.children}</div>
-    <style jsx global>{`
-      html {
-        box-sizing: border-box;
-      }
+export default function Layout({ children }: AppProps) {
+	const router = useRouter();
 
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
+	const meta = {
+		title: 'Recipebook',
+		description: `Website description`,
+		image: 'https://leerob.io/static/images/banner.png',
+		type: 'website',
+	};
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        background: rgba(0, 0, 0, 0.05);
-      }
-
-      input,
-      textarea {
-        font-size: 16px;
-      }
-
-      button {
-        cursor: pointer;
-      }
-    `}</style>
-    <style jsx>{`
-      .layout {
-        padding: 0 2rem;
-      }
-    `}</style>
-  </div>
-);
-
-export default Layout;
+	return (
+		<React.Fragment>
+			<Head>
+				<title>{meta.title}</title>
+				<meta name="robots" content="follow, index" />
+				<meta content={meta.description} name="description" />
+				<meta property="og:url" content={`https://recipebooktest.netlify.app${router.asPath}`} />
+				<link rel="canonical" href={`https://recipebooktest.netlify.app${router.asPath}`} />
+				<meta property="og:type" content={meta.type} />
+				<meta property="og:site_name" content="Recipebook" />
+				<meta property="og:description" content={meta.description} />
+				<meta property="og:title" content={meta.title} />
+				<meta property="og:image" content={meta.image} />
+			</Head>
+			<Navbar />
+			<main>{children}</main>
+		</React.Fragment>
+	);
+}
