@@ -1,9 +1,10 @@
 import { XIcon } from '@heroicons/react/solid';
+import type { NextPage } from 'next';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 
-export default function Login() {
+const Login: NextPage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
@@ -107,4 +108,6 @@ export default function Login() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default Login;

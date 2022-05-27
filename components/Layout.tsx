@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import type { ReactChild } from 'react';
 import React from 'react';
 
-import Navbar from './Navbar';
+import Navbar from './navigation/Navbar';
 
 type AppProps = {
 	children: ReactChild;
