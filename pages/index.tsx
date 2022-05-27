@@ -1,13 +1,38 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import Layout from '../components/Layout';
 
 const index: NextPage = () => {
+	const meta = {
+		title: 'Recipebook | Home page',
+		description: `Create your own recipebook!`,
+		image: 'https://recipebooktest.netlify.app/static/images/book.png',
+		type: 'website',
+	};
+
 	return (
-		<Layout title="Recipebook" description="Create your own recipebook!">
+		<Layout>
 			<>
+				<Head>
+					<title>{meta.title}</title>
+					<meta name="robots" content="follow, index" />
+					<meta content={meta.description} name="description" />
+					<meta property="og:url" content={`https://recipebooktest.netlify.app`} />
+					<link rel="canonical" href={`https://recipebooktest.netlify.app`} />
+					<meta property="og:type" content={meta.type} />
+					<meta property="og:site_name" content="Recipebook" />
+					<meta property="og:description" content={meta.description} />
+					<meta property="og:title" content={meta.title} />
+					<meta property="og:image" content={meta.image} />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:site" content="https://recipebooktest.netlify.app" />
+					<meta name="twitter:title" content={meta.title} />
+					<meta name="twitter:description" content={meta.description} />
+					<meta name="twitter:image" content={meta.image} />
+				</Head>
 				<header className="h-[80vh] flex-1 bg-[#E5F4EC] py-20 px-6">
 					<div className="container mx-auto flex h-full flex-row items-center justify-center">
 						<div className="flex h-full flex-col justify-between">
