@@ -6,15 +6,17 @@ import React from 'react';
 import Navbar from './navigation/Navbar';
 
 type AppProps = {
+	title: string;
+	description: string;
 	children: ReactChild;
 };
 
-export default function Layout({ children }: AppProps) {
+export default function Layout({ title, description, children }: AppProps) {
 	const router = useRouter();
 
 	const meta = {
-		title: 'Recipebook',
-		description: `Website description`,
+		title,
+		description,
 		image: 'https://leerob.io/static/images/banner.png',
 		type: 'website',
 	};
@@ -34,7 +36,7 @@ export default function Layout({ children }: AppProps) {
 				<meta property="og:image" content={meta.image} />
 			</Head>
 			<Navbar />
-			<main>{children}</main>
+			<main className="overflow-hidden bg-[#E5F4EC]">{children}</main>
 		</React.Fragment>
 	);
 }
