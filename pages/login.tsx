@@ -5,9 +5,9 @@ import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 
 const Login: NextPage = () => {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [error, setError] = useState('');
+	const [email, setEmail] = useState<string>('');
+	const [password, setPassword] = useState<string>('');
+	const [error, setError] = useState<string>('');
 
 	async function googleSignIn() {
 		try {
