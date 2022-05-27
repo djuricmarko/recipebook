@@ -23,7 +23,7 @@ const index: NextPage = () => {
 					<meta property="og:url" content={`https://recipebooktest.netlify.app`} />
 					<link rel="canonical" href={`https://recipebooktest.netlify.app`} />
 					<meta property="og:type" content={meta.type} />
-					<meta property="og:site_name" content="Lee Robinson" />
+					<meta property="og:site_name" content="Recipebook" />
 					<meta property="og:description" content={meta.description} />
 					<meta property="og:title" content={meta.title} />
 					<meta property="og:image" content={meta.image} />
