@@ -33,8 +33,8 @@ const index: NextPage = () => {
 					<meta name="twitter:description" content={meta.description} />
 					<meta name="twitter:image" content={meta.image} />
 				</Head>
-				<header className="h-[80vh] flex-1 bg-[#E5F4EC] py-20 px-6">
-					<div className="container mx-auto flex h-full flex-row items-center justify-center">
+				<header className="h-[80vh] bg-[#E5F4EC] py-20 px-6">
+					<div className="container mx-auto flex h-full flex-row items-center justify-center px-4">
 						<div className="flex h-full flex-col justify-between">
 							<div>
 								<p className="text-2xl font-semibold text-red-400">Create your own</p>
