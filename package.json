@@ -15,7 +15,8 @@
 		"studio": "prisma studio"
 	},
 	"prisma": {
-		"seed": "ts-node prisma/seed.ts"
+		"seed": "ts-node prisma/seed.ts",
+		"schema": "src/prisma/schema.prisma"
 	},
 	"dependencies": {
 		"@headlessui/react": "^1.6.3",
