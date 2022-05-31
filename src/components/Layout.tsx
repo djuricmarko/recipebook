@@ -1,10 +1,10 @@
-import type { ReactChild } from 'react';
+import type { ReactElement } from 'react';
 import React from 'react';
 
 import Navbar from './navigation/Navbar';
 
 type AppProps = {
-	children: ReactChild;
+	children: ReactElement;
 };
 
 export default function Layout({ children }: AppProps) {
