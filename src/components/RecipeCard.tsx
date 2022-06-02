@@ -19,7 +19,7 @@ const RecipeCard = ({ title, image, time }: TProps) => {
 					<p className="ml-2 font-bold text-white">{time}</p>
 				</div>
 			</div>
-			<p className="my-2 truncate text-lg">{title}</p>
+			<p className="my-2 truncate text-lg font-bold">{title}</p>
 		</div>
 	);
 };
