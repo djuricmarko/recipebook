@@ -1,6 +1,6 @@
 import Layout from 'components/Layout';
+import RecipeCard from 'components/RecipeCard';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -12,26 +12,36 @@ const index: NextPage = () => {
 		type: 'website',
 	};
 
+	const recipes = [
+		{
+			id: 1,
+			title: 'Pizza Capricciosa',
+			image: '/static/images/recipes/pizza-capricciosa.jpg',
+			time: 'One hour and 30 minutes',
+		},
+		{
+			id: 2,
+			title: 'Double cheese burger',
+			image: '/static/images/recipes/burger.jpg',
+			time: 'One hour',
+		},
+		{
+			id: 3,
+			title: 'Ceaser salad',
+			image: '/static/images/recipes/salad.jpg',
+			time: '15 minutes',
+		},
+		{
+			id: 4,
+			title: 'French toast',
+			image: '/static/images/recipes/french-toast.jpg',
+			time: 'Under 30 minutes',
+		},
+	];
+
 	return (
-		<Layout>
+		<Layout meta={meta}>
 			<>
-				<Head>
-					<title>{meta.title}</title>
-					<meta name="robots" content="follow, index" />
-					<meta content={meta.description} name="description" />
-					<meta property="og:url" content={`https://recipebooktest.netlify.app`} />
-					<link rel="canonical" href={`https://recipebooktest.netlify.app`} />
-					<meta property="og:type" content={meta.type} />
-					<meta property="og:site_name" content="Recipebook" />
-					<meta property="og:description" content={meta.description} />
-					<meta property="og:title" content={meta.title} />
-					<meta property="og:image" content={meta.image} />
-					<meta name="twitter:card" content="summary_large_image" />
-					<meta name="twitter:site" content="https://recipebooktest.netlify.app" />
-					<meta name="twitter:title" content={meta.title} />
-					<meta name="twitter:description" content={meta.description} />
-					<meta name="twitter:image" content={meta.image} />
-				</Head>
 				<header className="h-[80vh] bg-[#E5F4EC] py-20 px-6">
 					<div className="container mx-auto flex h-full flex-row items-center justify-center px-4">
 						<div className="flex h-full flex-col justify-between">
@@ -82,7 +92,30 @@ const index: NextPage = () => {
 					</div>
 				</header>
 				<section className="bg-white py-20">
-					<h1>Hello</h1>
+					<div className="container mx-auto space-y-20 px-4">
+						<div className="space-y-2">
+							<h1 className="text-3xl font-bold">Latest recipes</h1>
+							<hr className="w-20 border-2 border-red-400" />
+						</div>
+						<div className="grid grid-cols-1 grid-rows-1 place-items-center gap-14 md:grid-cols-2 lg:grid-cols-4">
+							{recipes.map(({ id, title, image, time }) => (
+								<RecipeCard key={id} title={title} image={image} time={time} />
+							))}
+						</div>
+					</div>
+				</section>
+				<section className="bg-red-400 py-20">
+					<div className="container mx-auto space-y-20 px-4">
+						<div className="space-y-2">
+							<h1 className="text-3xl font-bold">Most popular recipes</h1>
+							<hr className="w-32 border-2 border-white" />
+						</div>
+						<div className="grid grid-cols-1 grid-rows-1 place-items-center gap-14 md:grid-cols-2 lg:grid-cols-4">
+							{recipes.map(({ id, title, image, time }) => (
+								<RecipeCard key={id} title={title} image={image} time={time} />
+							))}
+						</div>
+					</div>
 				</section>
 			</>
 		</Layout>
