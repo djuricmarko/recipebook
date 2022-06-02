@@ -4,6 +4,20 @@ export default function Document() {
 	return (
 		<Html lang="en">
 			<Head>
+				<link
+					rel="preload"
+					href="/fonts/Satoshi-Variable.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Satoshi-VariableItalic.woff2"
+					as="font"
+					type="font/woff2"
+					crossOrigin="anonymous"
+				/>
 				<link href="/static/favicons/favicon.ico" rel="shortcut icon" />
 				<link href="/static/favicons/site.webmanifest" rel="manifest" />
 				<link href="/static/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
