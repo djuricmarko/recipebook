@@ -15,6 +15,7 @@ const navigation: INavigation[] = [
 	{ name: 'Explore', href: '/explore', current: false },
 	{ name: 'Categories', href: '/categories', current: false },
 	{ name: 'Search', href: '/search', current: false },
+	{ name: 'Blog', href: '/blog', current: false },
 ];
 
 const classNames = (classes: [string, string]) => classes.filter(Boolean).join(' ');

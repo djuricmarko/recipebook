@@ -55,12 +55,11 @@ const index: NextPage = () => {
 								</p>
 							</div>
 							<div>
-								<button
-									type="button"
-									className="bg-red-400 px-10 py-4 font-bold text-white transition-colors hover:bg-red-600"
-								>
-									<Link href="/recipes">Explore now</Link>
-								</button>
+								<Link href="/recipes">
+									<a className="bg-red-400 px-10 py-4 font-bold text-white transition-colors hover:bg-red-600">
+										Explore now
+									</a>
+								</Link>
 							</div>
 							<div className="flex flex-row">
 								<div className="border-r-4 border-green-600 p-1 px-8 pl-0">
@@ -94,7 +93,7 @@ const index: NextPage = () => {
 				<section className="bg-white py-20">
 					<div className="container mx-auto space-y-20 px-4">
 						<div className="space-y-2">
-							<h1 className="text-3xl font-bold">Latest recipes</h1>
+							<h2 className="text-3xl font-bold">Latest recipes</h2>
 							<hr className="w-20 border-2 border-red-400" />
 						</div>
 						<div className="grid grid-cols-1 grid-rows-1 place-items-center gap-14 md:grid-cols-2 lg:grid-cols-4">
@@ -107,7 +106,7 @@ const index: NextPage = () => {
 				<section className="bg-red-400 py-20">
 					<div className="container mx-auto space-y-20 px-4">
 						<div className="space-y-2">
-							<h1 className="text-3xl font-bold">Most popular recipes</h1>
+							<h2 className="text-3xl font-bold">Most popular recipes</h2>
 							<hr className="w-32 border-2 border-white" />
 						</div>
 						<div className="grid grid-cols-1 grid-rows-1 place-items-center gap-14 md:grid-cols-2 lg:grid-cols-4">
