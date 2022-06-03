@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import type { ReactElement } from 'react';
+import type { ReactNode } from 'react';
 import React from 'react';
 
 import Navbar from './navigation/Navbar';
 
 type TProps = {
-	children: ReactElement;
+	children: ReactNode;
 	meta: {
 		title: string;
 		description: string;
