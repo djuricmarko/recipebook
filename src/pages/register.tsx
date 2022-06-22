@@ -1,11 +1,8 @@
+import type { NextPage } from 'next';
 import React from 'react';
 
-type Props = {
-	name: String;
+const Register: NextPage = () => {
+	return <div>Register Page</div>;
 };
 
-const register: React.FunctionComponent<Props> = ({ name }) => {
-	return <div>{name}</div>;
-};
-
-export default register;
+export default Register;

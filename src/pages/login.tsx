@@ -21,14 +21,14 @@ const Login: NextPage = () => {
 	console.log(email, password);
 
 	return (
-		<div className="flex h-screen items-center justify-center bg-[#E5F4EC]">
+		<div className="flex min-h-screen items-center justify-center">
 			<Link href="/">
 				<a className="absolute top-8 left-8 text-3xl font-extrabold transition-colors hover:text-red-400">
 					Recipebook
 				</a>
 			</Link>
 			<div className="flex h-max flex-row bg-[#FAFAFA] shadow-2xl">
-				<div className="relative m-2 flex min-h-screen w-screen flex-col items-start justify-center p-6 md:min-h-full md:w-[500px] md:p-14">
+				<div className="relative flex min-h-screen w-screen flex-col items-start justify-center p-6 md:min-h-full md:w-[500px] md:p-14">
 					<Link href="/">
 						<XIcon className="absolute top-4 right-4 w-6 cursor-pointer font-bold" />
 					</Link>

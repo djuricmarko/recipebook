@@ -2,9 +2,9 @@ import Head from 'next/head';
 import type { ReactNode } from 'react';
 import React from 'react';
 
-import Navbar from './navigation/Navbar';
+import Navbar from '../navigation/Navbar';
 
-type TProps = {
+type Props = {
 	children: ReactNode;
 	meta: {
 		title: string;
@@ -14,7 +14,7 @@ type TProps = {
 	};
 };
 
-export default function Layout({ children, meta }: TProps) {
+export default function Layout({ children, meta }: Props) {
 	return (
 		<React.Fragment>
 			<Head>

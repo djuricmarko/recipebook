@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import React, { Fragment, useState } from 'react';
 
-interface INavigation {
+type NavigationTypes = {
 	name: string;
 	href: string;
 	current: boolean;
-}
+}[];
 
-const navigation: INavigation[] = [
+const navigation: NavigationTypes = [
 	{ name: 'Home', href: '/', current: true },
 	{ name: 'Explore', href: '/explore', current: false },
 	{ name: 'Categories', href: '/categories', current: false },
