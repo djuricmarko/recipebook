@@ -1,10 +1,10 @@
-import Layout from 'components/Layout';
+import Layout from 'components/layouts/Layout';
 import RecipeCard from 'components/RecipeCard';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const index: NextPage = () => {
+const Home: NextPage = () => {
 	const meta = {
 		title: 'Recipebook | Home page',
 		description: `Create your own recipebook!`,
@@ -42,7 +42,7 @@ const index: NextPage = () => {
 	return (
 		<Layout meta={meta}>
 			<>
-				<header className="h-[80vh] bg-[#E5F4EC] py-20 px-6">
+				<header className="h-[800px] bg-[#E5F4EC] py-20 px-6">
 					<div className="container mx-auto flex h-full flex-row items-center justify-center px-4">
 						<div className="flex h-full flex-col justify-between">
 							<div>
@@ -98,7 +98,7 @@ const index: NextPage = () => {
 						</div>
 						<div className="grid grid-cols-1 grid-rows-1 place-items-center gap-14 md:grid-cols-2 lg:grid-cols-4">
 							{recipes.map(({ id, title, image, time }) => (
-								<RecipeCard key={id} title={title} image={image} time={time} />
+								<RecipeCard key={id} id={id} title={title} image={image} time={time} />
 							))}
 						</div>
 					</div>
@@ -111,7 +111,7 @@ const index: NextPage = () => {
 						</div>
 						<div className="grid grid-cols-1 grid-rows-1 place-items-center gap-14 md:grid-cols-2 lg:grid-cols-4">
 							{recipes.map(({ id, title, image, time }) => (
-								<RecipeCard key={id} title={title} image={image} time={time} />
+								<RecipeCard key={id} id={id} title={title} image={image} time={time} />
 							))}
 						</div>
 					</div>
@@ -121,4 +121,4 @@ const index: NextPage = () => {
 	);
 };
 
-export default index;
+export default Home;
