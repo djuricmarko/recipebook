@@ -1,11 +1,12 @@
+import LoginSidebar from 'components/sidebar/LoginSidebar';
 import Head from 'next/head';
-import type { ReactElement } from 'react';
-import React from 'react';
+import type { ReactNode } from 'react';
+import React, { useState } from 'react';
 
-import Navbar from './navigation/Navbar';
+import Navbar from '../navigation/Navbar';
 
-type TProps = {
-	children: ReactElement;
+type Props = {
+	children: ReactNode;
 	meta: {
 		title: string;
 		description: string;
@@ -14,7 +15,17 @@ type TProps = {
 	};
 };
 
-export default function Layout({ children, meta }: TProps) {
+export default function Layout({ children, meta }: Props) {
+	const [sidebarActive, setSidebarActive] = useState<boolean>(false);
+
+	const closeSidebar = () => {
+		setSidebarActive(false);
+	};
+
+	const openSidebar = () => {
+		setSidebarActive(true);
+	};
+
 	return (
 		<React.Fragment>
 			<Head>
@@ -34,7 +45,8 @@ export default function Layout({ children, meta }: TProps) {
 				<meta name="twitter:description" content={meta.description} />
 				<meta name="twitter:image" content={meta.image} />
 			</Head>
-			<Navbar />
+			<Navbar openSidebar={openSidebar} />
+			<LoginSidebar active={sidebarActive} handleSidebarActive={closeSidebar} />
 			<main className="overflow-hidden bg-[#E5F4EC]">{children}</main>
 		</React.Fragment>
 	);
