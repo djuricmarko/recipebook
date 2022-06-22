@@ -4,6 +4,10 @@ import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import React, { Fragment, useState } from 'react';
 
+type Props = {
+	openSidebar: () => void;
+};
+
 type NavigationTypes = {
 	name: string;
 	href: string;
@@ -20,7 +24,7 @@ const navigation: NavigationTypes = [
 
 const classNames = (classes: [string, string]) => classes.filter(Boolean).join(' ');
 
-const Navbar = () => {
+const Navbar = ({ openSidebar }: Props) => {
 	const { data: session, status } = useSession();
 	const [error, setError] = useState<string>('');
 
@@ -177,16 +181,15 @@ const Navbar = () => {
 											<Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 focus:outline-none">
 												<Menu.Item>
 													{({ active }) => (
-														<Link href="/login">
-															<a
-																className={classNames([
-																	active ? 'bg-gray-100' : '',
-																	'block px-4 py-2 text-sm text-gray-700',
-																])}
-															>
-																Sign in
-															</a>
-														</Link>
+														<button
+															onClick={openSidebar}
+															className={classNames([
+																active ? 'bg-gray-100' : '',
+																'block px-4 py-2 text-sm w-full text-start text-gray-700',
+															])}
+														>
+															Sign in
+														</button>
 													)}
 												</Menu.Item>
 												<Menu.Item>
