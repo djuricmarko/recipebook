@@ -1,4 +1,4 @@
-import LoginSidebar from 'components/sidebar/LoginSidebar';
+import AuthSidebar from 'components/sidebars/AuthSidebar';
 import Head from 'next/head';
 import type { ReactNode } from 'react';
 import React, { useState } from 'react';
@@ -46,7 +46,7 @@ export default function Layout({ children, meta }: Props) {
 				<meta name="twitter:image" content={meta.image} />
 			</Head>
 			<Navbar openSidebar={openSidebar} />
-			<LoginSidebar active={sidebarActive} handleSidebarActive={closeSidebar} />
+			<AuthSidebar active={sidebarActive} handleSidebarActive={closeSidebar} />
 			<main className="overflow-hidden bg-[#E5F4EC]">{children}</main>
 		</React.Fragment>
 	);
